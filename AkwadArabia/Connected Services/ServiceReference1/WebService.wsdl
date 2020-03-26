@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RequestPage_DDL">
+        <s:complexType />
+      </s:element>
+      <s:element name="RequestPage_DDLResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Request_SEL">
+        <s:complexType />
+      </s:element>
+      <s:element name="Request_SELResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="REQUEST_INS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="REQUEST_TYPE_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="REQ_DATE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BUILDING_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DEPARTMENT_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_MOBILE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMPLOYEE_PHONE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CATEGORY_MASTER_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CATEGORY_DETAIL_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PLACE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DESCREPTION" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NOTES" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DAY_NIGHT_D_N" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="REQUEST_INSResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestPage_DDLSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestPage_DDL" />
+  </wsdl:message>
+  <wsdl:message name="RequestPage_DDLSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestPage_DDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="Request_SELSoapIn">
+    <wsdl:part name="parameters" element="tns:Request_SEL" />
+  </wsdl:message>
+  <wsdl:message name="Request_SELSoapOut">
+    <wsdl:part name="parameters" element="tns:Request_SELResponse" />
+  </wsdl:message>
+  <wsdl:message name="REQUEST_INSSoapIn">
+    <wsdl:part name="parameters" element="tns:REQUEST_INS" />
+  </wsdl:message>
+  <wsdl:message name="REQUEST_INSSoapOut">
+    <wsdl:part name="parameters" element="tns:REQUEST_INSResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestPage_DDLHttpGetIn" />
+  <wsdl:message name="RequestPage_DDLHttpGetOut" />
+  <wsdl:message name="Request_SELHttpGetIn" />
+  <wsdl:message name="Request_SELHttpGetOut" />
+  <wsdl:message name="REQUEST_INSHttpGetIn">
+    <wsdl:part name="REQUEST_TYPE_ID" type="s:string" />
+    <wsdl:part name="REQ_DATE" type="s:string" />
+    <wsdl:part name="BUILDING_ID" type="s:string" />
+    <wsdl:part name="DEPARTMENT_ID" type="s:string" />
+    <wsdl:part name="EMPLOYEE_NAME" type="s:string" />
+    <wsdl:part name="EMPLOYEE_MOBILE" type="s:string" />
+    <wsdl:part name="EMPLOYEE_PHONE" type="s:string" />
+    <wsdl:part name="CATEGORY_MASTER_ID" type="s:string" />
+    <wsdl:part name="CATEGORY_DETAIL_ID" type="s:string" />
+    <wsdl:part name="PLACE" type="s:string" />
+    <wsdl:part name="DESCREPTION" type="s:string" />
+    <wsdl:part name="NOTES" type="s:string" />
+    <wsdl:part name="DAY_NIGHT_D_N" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="REQUEST_INSHttpGetOut" />
+  <wsdl:message name="RequestPage_DDLHttpPostIn" />
+  <wsdl:message name="RequestPage_DDLHttpPostOut" />
+  <wsdl:message name="Request_SELHttpPostIn" />
+  <wsdl:message name="Request_SELHttpPostOut" />
+  <wsdl:message name="REQUEST_INSHttpPostIn">
+    <wsdl:part name="REQUEST_TYPE_ID" type="s:string" />
+    <wsdl:part name="REQ_DATE" type="s:string" />
+    <wsdl:part name="BUILDING_ID" type="s:string" />
+    <wsdl:part name="DEPARTMENT_ID" type="s:string" />
+    <wsdl:part name="EMPLOYEE_NAME" type="s:string" />
+    <wsdl:part name="EMPLOYEE_MOBILE" type="s:string" />
+    <wsdl:part name="EMPLOYEE_PHONE" type="s:string" />
+    <wsdl:part name="CATEGORY_MASTER_ID" type="s:string" />
+    <wsdl:part name="CATEGORY_DETAIL_ID" type="s:string" />
+    <wsdl:part name="PLACE" type="s:string" />
+    <wsdl:part name="DESCREPTION" type="s:string" />
+    <wsdl:part name="NOTES" type="s:string" />
+    <wsdl:part name="DAY_NIGHT_D_N" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="REQUEST_INSHttpPostOut" />
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="RequestPage_DDL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns All DDLS Data</wsdl:documentation>
+      <wsdl:input message="tns:RequestPage_DDLSoapIn" />
+      <wsdl:output message="tns:RequestPage_DDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Request_SEL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns All Request Data</wsdl:documentation>
+      <wsdl:input message="tns:Request_SELSoapIn" />
+      <wsdl:output message="tns:Request_SELSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="REQUEST_INS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert A new REQUEST</wsdl:documentation>
+      <wsdl:input message="tns:REQUEST_INSSoapIn" />
+      <wsdl:output message="tns:REQUEST_INSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpGet">
+    <wsdl:operation name="RequestPage_DDL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns All DDLS Data</wsdl:documentation>
+      <wsdl:input message="tns:RequestPage_DDLHttpGetIn" />
+      <wsdl:output message="tns:RequestPage_DDLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Request_SEL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns All Request Data</wsdl:documentation>
+      <wsdl:input message="tns:Request_SELHttpGetIn" />
+      <wsdl:output message="tns:Request_SELHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="REQUEST_INS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert A new REQUEST</wsdl:documentation>
+      <wsdl:input message="tns:REQUEST_INSHttpGetIn" />
+      <wsdl:output message="tns:REQUEST_INSHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpPost">
+    <wsdl:operation name="RequestPage_DDL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns All DDLS Data</wsdl:documentation>
+      <wsdl:input message="tns:RequestPage_DDLHttpPostIn" />
+      <wsdl:output message="tns:RequestPage_DDLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Request_SEL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns All Request Data</wsdl:documentation>
+      <wsdl:input message="tns:Request_SELHttpPostIn" />
+      <wsdl:output message="tns:Request_SELHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="REQUEST_INS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insert A new REQUEST</wsdl:documentation>
+      <wsdl:input message="tns:REQUEST_INSHttpPostIn" />
+      <wsdl:output message="tns:REQUEST_INSHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestPage_DDL">
+      <soap:operation soapAction="http://tempuri.org/RequestPage_DDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Request_SEL">
+      <soap:operation soapAction="http://tempuri.org/Request_SEL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="REQUEST_INS">
+      <soap:operation soapAction="http://tempuri.org/REQUEST_INS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestPage_DDL">
+      <soap12:operation soapAction="http://tempuri.org/RequestPage_DDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Request_SEL">
+      <soap12:operation soapAction="http://tempuri.org/Request_SEL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="REQUEST_INS">
+      <soap12:operation soapAction="http://tempuri.org/REQUEST_INS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpGet" type="tns:WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="RequestPage_DDL">
+      <http:operation location="/RequestPage_DDL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Request_SEL">
+      <http:operation location="/Request_SEL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="REQUEST_INS">
+      <http:operation location="/REQUEST_INS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpPost" type="tns:WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="RequestPage_DDL">
+      <http:operation location="/RequestPage_DDL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Request_SEL">
+      <http:operation location="/Request_SEL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="REQUEST_INS">
+      <http:operation location="/REQUEST_INS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://dev.aait.com.sa/aait/Service/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://dev.aait.com.sa/aait/Service/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpGet" binding="tns:WebServiceHttpGet">
+      <http:address location="http://dev.aait.com.sa/aait/Service/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpPost" binding="tns:WebServiceHttpPost">
+      <http:address location="http://dev.aait.com.sa/aait/Service/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

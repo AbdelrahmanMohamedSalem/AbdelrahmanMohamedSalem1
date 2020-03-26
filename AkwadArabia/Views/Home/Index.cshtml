@@ -1,0 +1,85 @@
+﻿
+
+<style>
+    table th, table td {
+        width: 220px;
+    }
+</style>
+<br />
+<br />
+<label>Filter</label>
+<input type="text" id="filter" style="width:300px" class="form-control" />
+<br />
+<br />
+
+@(Html.Kendo().Grid<AkwadArabia.Controllers.Request_SEL>()
+        .Name("grid")
+            .Columns(columns =>
+            {
+                columns.Bound("DOMAIN_ID");
+                columns.Bound("V_DOMAIN_NAME");
+                columns.Bound("STATE_ID").Sortable(true);
+                columns.Bound("STATE_NAME");
+                columns.Bound("REQ_DATE_G");
+                columns.Bound("CATEGORY_MASTER_ID");
+                columns.Bound("CATEGORY_MASTER_NAME");
+                columns.Bound("CATEGORY_DETAIL_ID");
+                columns.Bound("CATEGORY_DETAIL_NAME");
+                columns.Bound("SECTOR_ID");
+                columns.Bound("SECTOR_NAME");
+                columns.Bound("BUILDING_ID");
+                columns.Bound("BUILDING_NAME");
+                columns.Bound("DEPARTMENT_ID");
+                columns.Bound("DEPARTMENT_NAME");
+                columns.Bound("IMPORTANCE_ID");
+                columns.Bound("IMPORTANCE_NAME");
+            })
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+         .Sortable(sortable => sortable.AllowUnsort(false))
+)
+
+
+<script>
+    $(document).ready(function () {
+        $("#grid").kendoGrid({
+            dataSource: {
+                transport: {
+                    read: {
+                        url: "http://dev.aait.com.sa/aait/Service/WebService.asmx/Request_SEL",
+                        dataType: "json",
+                        type: "GET"
+                    }
+                }
+            },
+            pageable: {
+                pageSize: 20
+            }
+        });
+
+        $('#filter').on('input', function (e) {
+            debugger;
+            var grid = $('#grid').data('kendoGrid');
+            var columns = grid.columns;
+
+            var filter = { logic: 'or', filters: [] };
+
+            columns.forEach(function (x) {
+                if (x.field) {
+                    filter.filters.push({
+                        field: x.field,
+                        operator: 'contains',
+                        value: e.target.value
+                    })
+                }
+            });
+
+            grid.dataSource.filter(filter);
+        });
+
+    });
+
+
+</script>
+
+
